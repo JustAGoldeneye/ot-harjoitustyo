@@ -1,10 +1,14 @@
-# Linkit viikon 1 tiedostoihin
+# Ohjelmistotekniikka, harjoitustyö
+
+## Tehtävät
+
+### Viikko 1
 
 [gitlog.txt](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-# Otsikko
+## Otsikko
 
 Tähän varmaan sitten pitäisi kirjoittaa jotain tekstiä.
 
@@ -12,6 +16,6 @@ Tähän varmaan sitten pitäisi kirjoittaa jotain tekstiä.
 
 _Kaipa kirjoitain **tähän** vielä jotain._
 
-## Otsikko 2
+### Otsikko 2
 
 Ei mitään oleellista.
