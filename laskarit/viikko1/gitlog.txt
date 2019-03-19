@@ -1,0 +1,114 @@
+eemeli@RAKKINE:~/Documents/YLIOPISTO/OTM/ot_viikko1$ git log --stat | cat
+commit 7475b8296be331e96558cc2ee1f7569b8484ad88
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:36:40 2019 +0200
+
+    no niin
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bbfafcec17e7873087b4ee14d4a694f46944416e
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:28:33 2019 +0200
+
+    uusi dir ja 3 uutta file
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2311dd617ada0eda3c80dd61182c585748208026
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:17:32 2019 +0200
+
+    useita epämääräisiä muutoksia
+
+ eka.txt    | 6 ++----
+ kolmas.txt | 5 ++++-
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 81973abbbbdb7b63a70944846545882f973ae6d4
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:10:56 2019 +0200
+
+    tiedosto -> eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 50c9226ad1b49e73d87fdab1e80d78796e7f0a37
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:08:38 2019 +0200
+
+    poistettu toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit fc38f2c49f6d0fd80946bdb79f7cad71f27d0782
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:05:34 2019 +0200
+
+    korvattu ankalla
+
+ tiedosto.txt | 214 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 213 insertions(+), 1 deletion(-)
+
+commit eb3d71f1b4f4debab415f4cc40d987919ec8f98d
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 15:01:41 2019 +0200
+
+    Lisätty paljon tekstiä
+
+ tiedosto.txt | 1119 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 1118 insertions(+), 1 deletion(-)
+
+commit 65baa717c5903dbb6f8806968e51c4f146095669
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 14:43:16 2019 +0200
+
+    added stuff
+
+ stuff/sshdk | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cf00797b8d2756302d29f1df3d438f6ecd213aed
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 14:40:45 2019 +0200
+
+    2 lisäystä
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit dd92e08b8ebe59c7e935ba6d03edc80fa1126dea
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 14:37:55 2019 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2cd97d06c2c499c066a8d01d51a0f34cdabf1475
+Author: JustAGoldenEye <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 14:33:02 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 5aeaf3ce2e8484a6e16751aa47fb0d64e37f7865
+Author: Eemeli <eemeli.leppa@gmail.com>
+Date:   Tue Mar 19 14:22:13 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
