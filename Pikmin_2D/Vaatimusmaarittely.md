@@ -9,7 +9,7 @@ Peliin ont tarkoitus lisätä myöhemmässä vaiheessa tarkoitus lisätä tiedos
 
 ## Pelialueluonnos
 
-Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen reittiä. Katso tarkempi selitys perusverison ominaisuuksista.
+Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen reittiä. Katso tarkempi selitys "Perusverison ominaisuudet"-osion "Yksinkertainen path-finding-järjestelmä"-kohdasta.
 
 ![Pelialueluonnos](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin_2D/Documentation/Pikmin_2D_pelialuesuunnitelma.png "Pelialueluonnos")
 
@@ -17,12 +17,12 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 
 ## Perusversion ominaisuudet
 
-* Yksinketainen path-finding -järjestelmä
+* Yksinketainen path-finding-järjestelmä
   * Tarvitaan, jotta Pikminit voisivat tuoda esineitä takaisin avaruusalukselle ja sipulille.
   * Toeutetaan lisäämällä alueen karttaan näkymättömiä suorkulmioita, jollaiseen liikkuessaan esinettä kantava Pikmin-ryhmä alkaa seurata suorakulmioon määriteltyä suuntaa. Tarkoituksena on luoda näkymätön reittien verkosto, jota käyttämällä Pikminit löytävät aina perille alukseen tai sipuliin.
     * Jos Pikmnit eivät ole suorakulmion kohdalla, kävelevät ne suoraan alusta tai sipulia kohti.
     * Myös alkuperäinen Pikmin-peli käyttää hyvin samantapaista menetelmää.
-    * Pikminien ei ikinä tarvitse liikkua seuraamatta pelaajaa muualle kuin alusta kohti, joten monimutkaisempaa path-finding -algoritmia ei tarvita.
+    * Pikminien ei ikinä tarvitse liikkua seuraamatta pelaajaa muualle kuin alusta kohti, joten monimutkaisempaa path-finding-algoritmia ei tarvita.
 * Ohjaus
   * Pelaaja voi käskeä Pikmineitä seuraamaan häntä kävelemällä niiden läheltä.
   * Pelaaja voi heittää Pikmineitä esineisiin
@@ -39,8 +39,8 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
   * Yksinkertaiset
   * Eri asiat pitää pystyä erottamaan toisistaan.
 * Debug-tila
-  * Tekee path-finding-järjsetelmän käyttämistä suorakulmioista näkyviä.
-    * Pathfinding-järjestelmän on luultavasti monimutkaisin yksittäinen osa ja sen testaamiseen ei olisi muuten helppoa tapaa.
+  * Tekee path-finding-järjestelmän käyttämistä suorakulmioista näkyviä.
+    * Path-finding-järjestelmän on luultavasti monimutkaisin yksittäinen osa ja sen testaamiseen ei olisi muuten helppoa tapaa.
 
 ## Jatkokehhitysideat
 * Pelaaja voi ksäkeä kauempanan olevia Pikmineitä liittymään joukkoonsa.
