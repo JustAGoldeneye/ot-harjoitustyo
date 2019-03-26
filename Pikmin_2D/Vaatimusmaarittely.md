@@ -24,6 +24,7 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
     * Myös alkuperäinen Pikmin-peli käyttää hyvin samantapaista menetelmää.
     * Pikminien ei ikinä tarvitse liikkua seuraamatta pelaajaa muualle kuin alusta kohti, joten monimutkaisempaa path-finding-algoritmia ei tarvita.
 * Ohjaus
+  * Pelaaja voi liikuttaa pelaajahahmoaan
   * Pelaaja voi käskeä Pikmineitä seuraamaan häntä kävelemällä niiden läheltä.
   * Pelaaja voi heittää Pikmineitä esineisiin
   * Kun esineellä on sen painoon nähden tarpeeksi Pikmineitä, kantavat Pikminit esineen takaisin avaruusalukseen tai sipuliin.
