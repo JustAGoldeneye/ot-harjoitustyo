@@ -1,5 +1,9 @@
 # Ohjelmistotekniikka, harjoitustyö
 
+## Projekti
+
+* [Vaatimusmäärittely]()
+
 ## Tehtävät
 
 ### Viikko 2
