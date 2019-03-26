@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 
 ## Pelin idea
-Pelin on tarkoitus olla yksinkertaistettu ylhäältä päin kuvattu 2D-versio Nintendon Pikmin-pelistä. Tarkoituksena ei ole olla suora kopio mistään sarjan pelistä, vaan kyseessä on erillinen peli joka käyttää sarjan tärkeimpiä pelimekaniikkoja ja lisää mukaan jotain omaakin. Jos pelisarja ei ole ennestään tuttu, suosittelen katsomaan jonkin aikaa [tätä gameplay-videota](https://www.youtube.com/watch?v=Avjo5OGyS2Q&t=983s) videota, pelin perusidean ymmärtämiseksi. Pelissä on tarkoittus hallinnoida näitä Pikmin-olioita pelaajahahmon kautta. Niitä voi käskeä keräämään kaikenlaisia esineitä takaisin avaruusalukselle ja taistelemaan vihollisia vastaan. Näiden ominaisuuksien toteuttaminen on tämän projektin keskiössä.
+Pelin on tarkoitus olla yksinkertaistettu ylhäältä päin kuvattu 2D-versio Nintendon Pikmin-pelistä. Tarkoituksena ei ole olla suora kopio mistään sarjan pelistä, vaan kyseessä on erillinen peli joka käyttää sarjan tärkeimpiä pelimekaniikkoja ja lisää mukaan jotain omaakin. Jos pelisarja ei ole ennestään tuttu, [tästä gameplay-videosta](https://www.youtube.com/watch?v=Avjo5OGyS2Q&t=983s) voi katsoa, millaista pelin perusgameplay on. Pelissä on tarkoittus hallinnoida näitä Pikmin-olioita pelaajahahmon kautta. Niitä voi käskeä keräämään kaikenlaisia esineitä takaisin avaruusalukselle ja taistelemaan vihollisia vastaan. Näiden ominaisuuksien toteuttaminen on tämän projektin keskiössä.
 
 ## Käyttäjät
 Peliin ont tarkoitus lisätä myöhemmässä vaiheessa tarkoitus lisätä tiedosto, johon peli tallentaa pelin päivän lopussa edistymisen automaattisesti. Myös mahdollisuus useampaan tallennustiedostoon saatetaan lisätä. Kuitenkaan eroja käyttäjätyyppien välillä ei ole, jos debug-tilaa ei lasketa mukaan.
