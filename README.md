@@ -3,6 +3,7 @@
 ## Projekti
 
 * [Vaatimusmäärittely](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin_2D/Vaatimusmaarittely.md)
+* [Työaikakirjanpito](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin_2D/Documentation/Tyoaikakirjanpito.md)
 
 ## Tehtävät
 
