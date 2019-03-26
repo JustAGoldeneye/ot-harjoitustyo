@@ -4,9 +4,9 @@
 
 ### Viikko 2
 
-* [Kohta 1 (Java-projekti)]()
-* [Kohdat 2-6 (Java-projekti)]()
-* [Kohta 7 (png-tiedosto)]()
+* [Kohta 1 (Java-projekti)](https://github.com/JustAGoldeneye/ot-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti)
+* [Kohdat 2-6 (Java-projekti)](https://github.com/JustAGoldeneye/ot-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
+* [Kohta 7 (png-tiedosto)](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuusraportti.png)
 
 ### Viikko 1
 
