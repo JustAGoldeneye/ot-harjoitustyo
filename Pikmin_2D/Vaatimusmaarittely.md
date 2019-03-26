@@ -13,7 +13,7 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 
 ![Pelialueluonnos](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin_2D/Documentation/Pikmin_2D_pelialuesuunnitelma.png "Pelialueluonnos")
 
-(Sipulilla viitataan Pikminien avaruusalukseen, jota käytetään myös uusien Pikminien kasvattamiseen.)
+(Sipulilla tarkoitetaan Pikminien avaruusalusta.)
 
 ## Perusversion ominaisuudet
 
@@ -28,7 +28,7 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
   * Pelaaja voi heittää Pikmineitä esineisiin
   * Kun esineellä on sen painoon nähden tarpeeksi Pikmineitä, kantavat Pikminit esineen takaisin avaruusalukseen tai sipuliin.
 * Pikminien hallinta
-  * Mahdollisuus kasvattaa uusia Pikmineitä kantamalla ravinnepellettejä ja viholliseten ruhoja takaisin
+  * Mahdollisuus kasvattaa uusia Pikmineitä kantamalla ravinnepellettejä ja viholliseten ruhoja takaisin sipuliin.
    * Mahdollisuus säilöä Pikminejä sipuliin.
   * Jokin rajoitus yhtä aikaa sipulista ulkona olevien Pikminien määrälle
 * Käyttöliittymä
