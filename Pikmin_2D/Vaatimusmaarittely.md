@@ -11,7 +11,7 @@ Peliin ont tarkoitus lisätä myöhemmässä vaiheessa tarkoitus lisätä tiedos
 
 Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen reittiä. Katso tarkempi selitys perusverison ominaisuuksista.
 
-![Pelialueluonnos]()
+![Pelialueluonnos](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin_2D/Documentation/Pikmin_2D_pelialuesuunnitelma.png "Pelialueluonnos")
 
 (Sipulilla viitataan Pikminien avaruusalukseen, jota käytetään myös uusien Pikminien kasvattamiseen.)
 
