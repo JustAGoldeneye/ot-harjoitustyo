@@ -57,6 +57,7 @@ public class Player {
     
     public void stop() {
         this.movement = this.movement.multiply(0);
+        System.out.println(this.movement);
     }
     
     public void move() {
