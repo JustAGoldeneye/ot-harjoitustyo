@@ -2,7 +2,7 @@
 
 ## Huomioita
 
-Ohjelmani kaikki tämänhetkiset luokat tarvitsevat ainakin joitain javafx:n elementtejä, enkä onnistunut saamaan junit-testejä toimimaan javafx:n kanssa, joten preojektissa ei ole junit-testejä.
+Ohjelmani kaikki tämänhetkiset luokat tarvitsevat ainakin joitain javafx:n elementtejä, enkä onnistunut saamaan junit-testejä toimimaan javafx:n kanssa, joten preojektissa ei kunnollisia junit-testejä. Testikattavuusraportin tekeminen kuitenkin toimii.
 
 ## Nykyiset ominaisuudet
 
