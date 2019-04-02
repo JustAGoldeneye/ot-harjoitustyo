@@ -45,7 +45,7 @@ public class GameArea extends Application {
                     paneHeight = Double.valueOf(rowData[1]);
                     
                 } else if (rowData[0].equals("Player")) {
-                    player = new Player(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
+                    player = new Player(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), rowData[4]);
                 } else {
                     System.out.println("Error: Row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                 }
