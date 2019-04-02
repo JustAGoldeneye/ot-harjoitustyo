@@ -11,7 +11,9 @@ Pelin tällä hetkellä käyttäjälle ainoa helposti näkyvä ominaisuus pelaaj
 ### Pelin pelaaminen
 
 W - Liiku eteenpäin
+
 A - Käänny vasemmalle
+
 D - Käänny oikealle
 
 ## Dokumentaatio
