@@ -6,7 +6,7 @@ Ohjelmani kaikki tämänhetkiset luokat tarvitsevat ainakin joitain javafx:n ele
 
 ## Nykyiset ominaisuudet
 
-Pelin tällä hetkellä käyttäjälle ainoa helposti näkyvä ominaisuus pelaajahahmon liikuttaminen. Tämän lisäksi ohjelman importMapInfo.metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tähän tiedostoon on myöhemmin tarkoitus lisätä tiedot kaikista muistakin pelialueen objekteista.
+Pelin tällä hetkellä käyttäjälle ainoa helposti näkyvä ominaisuus pelaajahahmon liikuttaminen. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tähän tiedostoon on myöhemmin tarkoitus lisätä tiedot kaikista muistakin pelialueen objekteista.
 
 ### Pelin pelaaminen
 
