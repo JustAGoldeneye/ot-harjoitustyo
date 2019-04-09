@@ -34,7 +34,7 @@ public class GameArea extends Application {
         
         screen.getChildren().add(playerUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
-            screen.getChildren().add(pikminUI.getPikminCircle());
+            screen.getChildren().add(pikminUI.gameObjectShape);
         }
         
         Scene scene = new Scene(screen);
