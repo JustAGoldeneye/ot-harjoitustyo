@@ -5,8 +5,8 @@ import javafx.scene.paint.Color;
 import game.domain.Pikmin.Pikmin;
 
 public abstract class PikminUI {
-    private Circle pikminCircle;
-    private Pikmin pikmin;
+    protected Circle pikminCircle;
+    protected Pikmin pikmin;
         
     public PikminUI(double xPos, double yPos, double radius, Color color, Pikmin pikmin) {
         this.pikminCircle = new Circle(xPos, yPos, radius, color);

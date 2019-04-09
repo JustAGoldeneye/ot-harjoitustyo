@@ -32,7 +32,7 @@ public class GameArea extends Application {
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
         
-        screen.getChildren().add(playerUI.getPlayerCirlce());
+        screen.getChildren().add(playerUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
             screen.getChildren().add(pikminUI.getPikminCircle());
         }

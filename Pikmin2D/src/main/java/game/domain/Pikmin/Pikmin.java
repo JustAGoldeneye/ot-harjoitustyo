@@ -1,10 +1,10 @@
 package game.domain.Pikmin;
 
 public abstract class Pikmin {
-    private final PikminType type;
-    private final String name;
-    private final int strength;
-    private final int speed;
+    protected final PikminType type;
+    protected final String name;
+    protected final int strength;
+    protected final int speed;
     
     public Pikmin(PikminType type, String name, int strength, int speed) {
         
