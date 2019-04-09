@@ -84,4 +84,4 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
     * Pelin voi läpäistä
     * Vaatimukset uusien alueiden aukaisemiselle
 * Paremmat grafiikat
-* Muokattavalle karttatiedostomuodolle käyttöohje
+* Muokattavalle .pkmp-karttatiedostomuodolle käyttöohje
