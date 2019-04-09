@@ -6,9 +6,11 @@ import game.ui.pikmin.*;
 
 import java.util.Scanner;
 import java.io.File;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -67,6 +69,14 @@ public class GameArea extends Application {
                 }
                 
                 playerUI.move();
+                
+                List<PikminUI> collidedList = pikminUIs.stream()
+                        .filter(pikminUI -> playerUI.collide(pikminUI))
+                        .collect(Collectors.toList());
+                collidedList.stream().forEach(collided -> {
+                    pikminUIs.remove(collided);
+                    screen.getChildren().remove(collided.getGameObjectShape());
+                });
             }
         }.start();
     }

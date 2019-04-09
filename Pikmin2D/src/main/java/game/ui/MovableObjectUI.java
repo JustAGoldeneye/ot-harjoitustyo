@@ -51,4 +51,9 @@ public abstract class MovableObjectUI extends GameObjectUI {
         this.gameObjectShape.setTranslateX(this.gameObjectShape.getTranslateX() + this.movement.getX());
         this.gameObjectShape.setTranslateY(this.gameObjectShape.getTranslateY() + this.movement.getY());
     }
+    
+    public boolean collide(GameObjectUI target) {
+        Shape hitArea = Shape.intersect(this.gameObjectShape, target.getGameObjectShape());
+        return hitArea.getBoundsInLocal().getWidth() != -1;
+    }
 }
