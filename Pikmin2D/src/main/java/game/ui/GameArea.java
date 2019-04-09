@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import javafx.animation.AnimationTimer;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.text.Text;
 
 public class GameArea extends Application {
     static double paneWidth;
@@ -33,6 +35,10 @@ public class GameArea extends Application {
         
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
+        
+        Text redPikminCounterText = new Text(10, 20, "Red Pikmins: 0");
+        screen.getChildren().add(redPikminCounterText);
+        AtomicInteger redPikminCounter = new AtomicInteger();
         
         screen.getChildren().add(playerUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
@@ -74,9 +80,15 @@ public class GameArea extends Application {
                         .filter(pikminUI -> playerUI.collide(pikminUI))
                         .collect(Collectors.toList());
                 collidedList.stream().forEach(collided -> {
+                    
                     pikminUIs.remove(collided);                          
                     screen.getChildren().remove(collided.getGameObjectShape());
+                    
                     playerUI.getPlayer().addPikmin(collided.getPikmin().getType());
+                    
+                    if (collided.getPikmin().getType() == PikminType.RED) {
+                        redPikminCounterText.setText("Red Pikmins: " + redPikminCounter.addAndGet(1));
+                    }
                 });
             }
         }.start();
@@ -84,8 +96,8 @@ public class GameArea extends Application {
     
     public void importMapInfo(String fileName) {
         try (Scanner fReader = new Scanner(new File(fileName))) {
-            
             boolean firstRow = true;
+            pikminUIs = new ArrayList<>();
             while (fReader.hasNextLine()) {
                 String row = fReader.nextLine();          
                 String[] rowDivide = row.split("#");
@@ -100,10 +112,10 @@ public class GameArea extends Application {
                     playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
                     
                 } else if (rowData[0].equals("Pikmin")) {
-                    
-                    pikminUIs = new ArrayList<>();
+                         
                     if (rowData[1].equals("RED")) {
                         pikminUIs.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
+                        System.out.println("testi");
                     } else if (rowData[1].equals("YELLOW")) {
                         System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else if (rowData[1].equals("BLUE")) {
