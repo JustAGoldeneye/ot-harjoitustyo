@@ -42,6 +42,8 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 * Debug-tila
   * Tekee path-finding-järjestelmän käyttämistä suorakulmioista näkyviä.
     * Path-finding-järjestelmän on luultavasti monimutkaisin yksittäinen osa ja sen testaamiseen ei olisi muuten helppoa tapaa.
+* Helposti muokattava karttatiedostomuoto .pkmp
+  * Käyttäjäkin voi halutessaan muuokata tai luoda karttoja tekstieditorilla.
 
 ## Jatkokehhitysideat
 * Pelaaja voi ksäkeä kauempanan olevia Pikmineitä liittymään joukkoonsa.
@@ -82,3 +84,4 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
     * Pelin voi läpäistä
     * Vaatimukset uusien alueiden aukaisemiselle
 * Paremmat grafiikat
+* Muokattavalle karttatiedostomuodolle käyttöohje

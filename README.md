@@ -1,6 +1,6 @@
 # Pikmin 2D
 
-## Huomioita
+## Viikoittaisia huomioita
 
 Käytin tällä viikolla ajan pääosin luokkarakenteen selkeyttämiseen ja ongelmien ratkomiseen. Tämän vuoksi peliin ei ole tullut paljoa uusia ominaisuuksia.
 
