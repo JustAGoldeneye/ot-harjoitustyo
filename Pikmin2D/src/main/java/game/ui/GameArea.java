@@ -1,7 +1,8 @@
 package game.ui;
 
+import game.domain.pikmin.RedPikmin;
+import game.domain.pikmin.PikminType;
 import game.domain.*;
-import game.domain.Pikmin.*;
 import game.ui.pikmin.*;
 
 import java.util.Scanner;
@@ -36,7 +37,7 @@ public class GameArea extends Application {
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
         
-        Text redPikminCounterText = new Text(10, 20, "Red Pikmins: 0");
+        Text redPikminCounterText = new Text(10, 20, "Red Pikmin: 0");
         screen.getChildren().add(redPikminCounterText);
         AtomicInteger redPikminCounter = new AtomicInteger();
         
@@ -87,7 +88,7 @@ public class GameArea extends Application {
                     playerUI.getPlayer().addPikmin(collided.getPikmin().getType());
                     
                     if (collided.getPikmin().getType() == PikminType.RED) {
-                        redPikminCounterText.setText("Red Pikmins: " + redPikminCounter.addAndGet(1));
+                        redPikminCounterText.setText("Red Pikmin: " + redPikminCounter.addAndGet(1));
                     }
                 });
             }
@@ -115,7 +116,6 @@ public class GameArea extends Application {
                          
                     if (rowData[1].equals("RED")) {
                         pikminUIs.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
-                        System.out.println("testi");
                     } else if (rowData[1].equals("YELLOW")) {
                         System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else if (rowData[1].equals("BLUE")) {

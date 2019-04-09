@@ -1,6 +1,6 @@
 package game.ui.pikmin;
 
-import game.domain.Pikmin.RedPikmin;
+import game.domain.pikmin.RedPikmin;
 import javafx.scene.paint.Color;
 
 public class RedPikminUI extends PikminUI {

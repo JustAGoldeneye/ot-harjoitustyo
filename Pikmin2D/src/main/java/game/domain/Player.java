@@ -1,14 +1,24 @@
 package game.domain;
 
-import game.domain.Pikmin.PikminType;
+import game.domain.pikmin.PikminType;
 
 public class Player {
-    private int[] pikmins; //Lista Pikmin enumien arvoista
+    private int[] pikmins;
     
+    /**
+     * Holds data related to the player character.
+     * pikmins[] contains amounts of every Pikmin species currently in team
+     * (JavaFX data can be found in PlayerUI.)
+     */
     public Player() {
         this.pikmins = new int[PikminType.values().length];
     }
     
+    /**
+     * Adds 1 Pikmin of the type specified in the parameter to the player's team.
+     * 
+     * @param pikmin enum telling the Pikmin type to be added
+     */
     public void addPikmin(PikminType pikmin) {
         this.pikmins[pikmin.ordinal()]++;
     }

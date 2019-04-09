@@ -4,7 +4,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
 
 import game.ui.GameObjectUI;
-import game.domain.Pikmin.Pikmin;
+import game.domain.pikmin.Pikmin;
 
 public abstract class PikminUI extends GameObjectUI {
     protected Pikmin pikmin;

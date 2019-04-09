@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import game.domain.Player;
-import game.domain.Pikmin.PikminType;
+import game.domain.pikmin.PikminType;
 
 public class PlayerTest {
     Player player;
