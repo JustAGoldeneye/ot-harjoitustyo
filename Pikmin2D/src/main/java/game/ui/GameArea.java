@@ -22,7 +22,7 @@ public class GameArea extends Application {
     static double paneHeight;
     
     static PlayerUI playerUI;
-    static ArrayList<PikminUI> pikmins;
+    static ArrayList<PikminUI> pikminUIs;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -32,7 +32,10 @@ public class GameArea extends Application {
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
         
-        screen.getChildren().add(playerUI.getPlayer());
+        screen.getChildren().add(playerUI.getPlayerCirlce());
+        for (PikminUI pikminUI : pikminUIs) {
+            screen.getChildren().add(pikminUI.getPikminCircle());
+        }
         
         Scene scene = new Scene(screen);
         stage.setScene(scene);
@@ -87,9 +90,9 @@ public class GameArea extends Application {
                     
                 } else if (rowData[0].equals("Pikmin")) {
                     
-                    pikmins = new ArrayList<>();
+                    pikminUIs = new ArrayList<>();
                     if (rowData[1].equals("RED")) {
-                        pikmins.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
+                        pikminUIs.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
                     } else if (rowData[1].equals("YELLOW")) {
                         System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else if (rowData[1].equals("BLUE")) {

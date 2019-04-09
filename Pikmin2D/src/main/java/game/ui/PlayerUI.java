@@ -31,7 +31,7 @@ public class PlayerUI {
         this.maxAcceleration = 0.6;
     }
 
-    public Circle getPlayer() {
+    public Circle getPlayerCirlce() {
         return playerCircle;
     }
     
