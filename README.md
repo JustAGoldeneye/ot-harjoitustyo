@@ -2,11 +2,11 @@
 
 ## Huomioita
 
-Ohjelmani kaikki tämänhetkiset luokat tarvitsevat ainakin joitain javafx:n elementtejä, enkä onnistunut saamaan junit-testejä toimimaan javafx:n kanssa, joten preojektissa ei kunnollisia junit-testejä. Testikattavuusraportin tekeminen kuitenkin toimii.
+Käytin tällä viikolla ajan pääosin luokkarakenteen selkeyttämiseen ja ongelmien ratkomiseen. Tämän vuoksi peliin ei ole tullut paljoa uusia ominaisuuksia.
 
 ## Nykyiset ominaisuudet
 
-Pelin tällä hetkellä käyttäjälle ainoa helposti näkyvä ominaisuus pelaajahahmon liikuttaminen. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tähän tiedostoon on myöhemmin tarkoitus lisätä tiedot kaikista muistakin pelialueen objekteista.
+Pelin tällä hetkellä käyttäjälle helpoiten näkyvä ominaisuus on pelihahmon liikuttaminen. Pelihahmo pystyy keräämään mukaansa Pikmineitä, vaikka niillä ei voikaaan vielä tehdä mitään. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan ja Pikminien lisäämistä kartalle. Pelialueen kokon voi myös valita.
 
 ### Pelin pelaaminen
 
@@ -20,6 +20,7 @@ D - Käänny oikealle
 
 * [Vaatimusmäärittely](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Vaatimusmaarittely.md)
 * [Työaikakirjanpito](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Tyoaikakirjanpito.md)
+* [Arkkitehtuurisuunnitelma](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md)
 
 ## Komentorivikomennot
 
