@@ -74,8 +74,9 @@ public class GameArea extends Application {
                         .filter(pikminUI -> playerUI.collide(pikminUI))
                         .collect(Collectors.toList());
                 collidedList.stream().forEach(collided -> {
-                    pikminUIs.remove(collided);
+                    pikminUIs.remove(collided);                          
                     screen.getChildren().remove(collided.getGameObjectShape());
+                    playerUI.getPlayer().addPikmin(collided.getPikmin().getType());
                 });
             }
         }.start();

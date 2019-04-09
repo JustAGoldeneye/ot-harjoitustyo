@@ -13,4 +13,8 @@ public abstract class PikminUI extends GameObjectUI {
         super(new Circle(xPos, yPos, radius, color));
         this.pikmin = pikmin;
     }
+
+    public Pikmin getPikmin() {
+        return pikmin;
+    }
 }

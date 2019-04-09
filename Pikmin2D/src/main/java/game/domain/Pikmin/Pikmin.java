@@ -6,11 +6,14 @@ public abstract class Pikmin {
     protected final int strength;
     protected final int speed;
     
-    public Pikmin(PikminType type, String name, int strength, int speed) {
-        
+    public Pikmin(PikminType type, String name, int strength, int speed) {        
         this.type = type;
         this.name = name;
         this.strength = strength;
         this.speed = speed;
+    }
+
+    public PikminType getType() {
+        return type;
     }
 }
