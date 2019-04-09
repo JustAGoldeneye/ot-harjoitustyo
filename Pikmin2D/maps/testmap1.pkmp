@@ -1,2 +1,3 @@
 1000,800#mapWidth,mapHeight
 Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,radius,image
+Pikmin,RED,200,500#object,PikminType,xPos,yPos

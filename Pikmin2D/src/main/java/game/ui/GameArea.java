@@ -1,10 +1,15 @@
 package game.ui;
 
-import game.domain.Player;
+import game.domain.*;
+import game.domain.Pikmin.*;
+import game.ui.pikmin.*;
+
 import java.util.Scanner;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -15,8 +20,9 @@ import javafx.scene.input.KeyCode;
 public class GameArea extends Application {
     static double paneWidth;
     static double paneHeight;
-    static Player player;
-    //Use a list if there are multiple objects of the same type.
+    
+    static PlayerUI playerUI;
+    static ArrayList<PikminUI> pikmins;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -26,7 +32,7 @@ public class GameArea extends Application {
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
         
-        screen.getChildren().add(player.getPlayer());
+        screen.getChildren().add(playerUI.getPlayer());
         
         Scene scene = new Scene(screen);
         stage.setScene(scene);
@@ -40,7 +46,7 @@ public class GameArea extends Application {
         });
         scene.setOnKeyReleased(event -> {
            pressedButtons.put(event.getCode(), Boolean.FALSE);
-           player.stop();
+           playerUI.stop();
         });
         
         new AnimationTimer() {
@@ -48,16 +54,16 @@ public class GameArea extends Application {
             @Override
             public void handle(long current) {
                 if (pressedButtons.getOrDefault(KeyCode.A, false)) {
-                    player.turnLeft();
+                    playerUI.turnLeft();
                 }
                 if (pressedButtons.getOrDefault(KeyCode.D, false)) {
-                    player.turnRight();
+                    playerUI.turnRight();
                 }
                 if (pressedButtons.getOrDefault(KeyCode.W, false)) {
-                    player.accelerate();
+                    playerUI.accelerate();
                 }
                 
-                player.move();
+                playerUI.move();
             }
         }.start();
     }
@@ -77,9 +83,23 @@ public class GameArea extends Application {
                     paneHeight = Double.valueOf(rowData[1]);
                     
                 } else if (rowData[0].equals("Player")) {
-                    player = new Player(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5]);
+                    playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
+                    
+                } else if (rowData[0].equals("Pikmin")) {
+                    
+                    pikmins = new ArrayList<>();
+                    if (rowData[1].equals("RED")) {
+                        pikmins.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
+                    } else if (rowData[1].equals("YELLOW")) {
+                        System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                    } else if (rowData[1].equals("BLUE")) {
+                        System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                    } else {
+                        System.out.println("Error: PikminType marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                    }
+                    
                 } else {
-                    System.out.println("Error: Row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                    System.out.println("Error: Object marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                 }
             }
         } catch (Exception e) {
