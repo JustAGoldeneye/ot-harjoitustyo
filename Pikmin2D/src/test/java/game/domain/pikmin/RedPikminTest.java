@@ -1,3 +1,5 @@
+package game.domain.pikmin;
+
 import game.domain.pikmin.Pikmin;
 import game.domain.pikmin.PikminType;
 import game.domain.pikmin.RedPikmin;
