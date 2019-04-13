@@ -113,7 +113,12 @@ public class GameArea extends Application {
                     
                 } else if (rowData[0].equals("Player")) {
                     playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
-                    
+                } else if (rowData[0].equals("RecoveryArea")) {
+                    //TODO
+                    System.out.println("Error: Object marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                } else if (rowData[0].equals("Item")) {
+                    //TODO
+                    System.out.println("Error: Object marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                 } else if (rowData[0].equals("Pikmin")) {
                          
                     if (rowData[1].equals("RED")) {

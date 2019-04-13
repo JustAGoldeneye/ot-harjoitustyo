@@ -1,5 +1,15 @@
+#Create game area
+#This row must always be first in the file. After that the order of rows doesn't matter.
 1920,1080#mapWidth,mapHeight
-Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,radius,image
+
+#Create base gameplay objects
+Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
+RecoveryArea,130,870,40#object,xPos,yPos,radius
+
+#Create carriable items
+Item,10,20,Circle,1200,700,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
+
+#Create Pikmins
 Pikmin,RED,200,500#object,PikminType,xPos,yPos
 Pikmin,RED,220,500#object,PikminType,xPos,yPos
 Pikmin,RED,240,500#object,PikminType,xPos,yPos
@@ -24,5 +34,7 @@ Pikmin,RED,240,560#object,PikminType,xPos,yPos
 Pikmin,RED,260,560#object,PikminType,xPos,yPos
 Pikmin,RED,280,560#object,PikminType,xPos,yPos
 Pikmin,RED,300,560#object,PikminType,xPos,yPos
-#Item,10,20,Circle,1200,700,100#object,weight,maxCarriers,shape,xPos,yPos,radius
-#Voit kommentoida koodia näin.
+
+#TIPS:
+#You can comment the file like this.
+#Line changes don't affect how the file is read.
