@@ -24,3 +24,5 @@ Pikmin,RED,240,560#object,PikminType,xPos,yPos
 Pikmin,RED,260,560#object,PikminType,xPos,yPos
 Pikmin,RED,280,560#object,PikminType,xPos,yPos
 Pikmin,RED,300,560#object,PikminType,xPos,yPos
+#Item,10,20,Circle,1200,700,100#object,weight,maxCarriers,shape,xPos,yPos,radius
+#Voit kommentoida koodia näin.

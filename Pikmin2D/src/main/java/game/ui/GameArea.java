@@ -100,10 +100,12 @@ public class GameArea extends Application {
             boolean firstRow = true;
             pikminUIs = new ArrayList<>();
             while (fReader.hasNextLine()) {
-                String row = fReader.nextLine();          
+                String row = fReader.nextLine();
+                if (row.startsWith("#") || row.isEmpty()) {
+                    continue;
+                }
                 String[] rowDivide = row.split("#");
                 String[] rowData = rowDivide[0].split(",");
-                
                 if (firstRow) {
                     firstRow = false;
                     paneWidth = Double.valueOf(rowData[0]);
