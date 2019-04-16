@@ -1,5 +1,7 @@
 package game.domain.pikmin;
 
+import java.util.Objects;
+
 public abstract class Pikmin {
     protected final PikminType type;
     protected final String name;
@@ -20,6 +22,12 @@ public abstract class Pikmin {
         this.name = name;
         this.strength = strength;
         this.speed = speed;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
     }
 
     public PikminType getType() {

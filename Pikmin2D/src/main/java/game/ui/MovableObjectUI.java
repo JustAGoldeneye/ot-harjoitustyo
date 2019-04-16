@@ -7,15 +7,15 @@ public abstract class MovableObjectUI extends GameObjectUI {
     protected Point2D movement;
     protected int rotationModifier;
     protected double accelerationModifier;
-    protected double maxAcceleration;
+    protected double maxSpeed;
     
-    public MovableObjectUI(Shape shape, int rotationModifier, double accelerationModifier, double maxAcceleration) {
+    public MovableObjectUI(Shape shape, int rotationModifier, double accelerationModifier, double maxSpeed) {
         super(shape);
         this.movement = new Point2D(0, 0);
         
         this.rotationModifier = rotationModifier;
         this.accelerationModifier = accelerationModifier;
-        this.maxAcceleration = maxAcceleration;
+        this.maxSpeed = maxSpeed;
     }
     
     public void turnLeft() {
@@ -27,7 +27,7 @@ public abstract class MovableObjectUI extends GameObjectUI {
     }
     
     public void accelerate() {
-        if (this.movement.magnitude() <= this.maxAcceleration) {
+        if (this.movement.magnitude() <= this.maxSpeed) {
             double changeX = Math.cos(Math.toRadians(this.gameObjectShape.getRotate()));
             double changeY = Math.sin(Math.toRadians(this.gameObjectShape.getRotate()));
             changeX *= this.accelerationModifier;

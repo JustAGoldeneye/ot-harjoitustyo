@@ -29,6 +29,7 @@ public class GameArea extends Application {
     static PlayerUI playerUI;
     static RecoveryAreaUI recoveryAreaUI;
     static ArrayList<PikminUI> pikminUIs;
+    static ArrayList<ItemUI> itemUIs;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -44,6 +45,9 @@ public class GameArea extends Application {
         
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
+        for (ItemUI itemUI : itemUIs) {
+            screen.getChildren().add(itemUI.gameObjectShape);
+        }
         for (PikminUI pikminUI : pikminUIs) {
             screen.getChildren().add(pikminUI.gameObjectShape);
         }
@@ -102,6 +106,7 @@ public class GameArea extends Application {
         try (Scanner fReader = new Scanner(new File(fileName))) {
             boolean firstRow = true;
             pikminUIs = new ArrayList<>();
+            itemUIs = new ArrayList<>();
             while (fReader.hasNextLine()) {
                 String row = fReader.nextLine();
                 if (row.startsWith("#") || row.isEmpty()) {
@@ -119,7 +124,12 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("RecoveryArea")) {
                     recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
                 } else if (rowData[0].equals("Item")) {
-                    //TODO
+                   
+                   if (rowData[3].equals("Circle")) {
+                       itemUIs.add(new ItemUI(Integer.valueOf(rowData[1]), Integer.valueOf(rowData[2]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Double.valueOf(rowData[6]), rowData[7]));
+                   } else {
+                       System.out.println("Non-fatal error: Shape marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                   }
                 } else if (rowData[0].equals("Pikmin")) {
                          
                     if (rowData[1].equals("RED")) {
@@ -129,7 +139,7 @@ public class GameArea extends Application {
                     } else if (rowData[1].equals("BLUE")) {
                         System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else {
-                        System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                        System.out.println("Non-fatal error: PikminType marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                     }
                     
                 } else {
