@@ -29,6 +29,7 @@
                 <excludes>
                     <exclude>game/*</exclude>
                     <exclude>game/ui/*</exclude>
+                    <exclude>game/ui/CarriableUI.java</exclude>
                     <exclude>game/ui/pikmin/*</exclude>
                 </excludes>
             </configuration>

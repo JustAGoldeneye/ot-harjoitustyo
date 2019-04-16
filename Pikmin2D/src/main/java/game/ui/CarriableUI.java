@@ -22,7 +22,7 @@ public abstract class CarriableUI extends MovableObjectUI {
     }
     
     public void countAndsetMaxSpeed() {
-        int extraWeight = this.carriable.extraWeigth();
+        int extraWeight = this.carriable.extraStrength();
         if (extraWeight > 0) {
             this.maxSpeed = 0.2 * extraWeight;
         } else {

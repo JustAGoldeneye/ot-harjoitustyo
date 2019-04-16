@@ -23,6 +23,11 @@ public class Player {
         this.pikmins[pikmin.ordinal()]++;
     }
     
+    /**
+     * Gives away a Pikmin from the team if avaliable.
+     * @param pikmin The type of Pikmin to be given away
+     * @return Pikmin given away, null if none was available
+     */
     public Pikmin commandPikmin(PikminType pikmin) {
         if (this.pikmins[pikmin.ordinal()] > 0) {
             this.pikmins[pikmin.ordinal()]--;
