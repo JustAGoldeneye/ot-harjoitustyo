@@ -9,7 +9,7 @@ RecoveryArea,130,870,40#object,xPos,yPos,radius
 #Create carriable items
 Item,10,20,Circle,1200,700,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
 
-#Create Pikmins
+#Create Pikmin
 Pikmin,RED,200,500#object,PikminType,xPos,yPos
 Pikmin,RED,220,500#object,PikminType,xPos,yPos
 Pikmin,RED,240,500#object,PikminType,xPos,yPos

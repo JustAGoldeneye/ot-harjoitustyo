@@ -27,18 +27,12 @@ public abstract class MovableObjectUI extends GameObjectUI {
     }
     
     public void accelerate() {
-        double changeX = Math.cos(Math.toRadians(this.gameObjectShape.getRotate()));
-        double changeY = Math.sin(Math.toRadians(this.gameObjectShape.getRotate()));
-        
-        changeX *= this.accelerationModifier;
-        changeY *= this.accelerationModifier;
-        
-        Point2D temp = new Point2D(this.movement.getX(), this.movement.getY());
-        
         if (this.movement.magnitude() <= this.maxAcceleration) {
+            double changeX = Math.cos(Math.toRadians(this.gameObjectShape.getRotate()));
+            double changeY = Math.sin(Math.toRadians(this.gameObjectShape.getRotate()));
+            changeX *= this.accelerationModifier;
+            changeY *= this.accelerationModifier;
             this.movement = this.movement.add(changeX, changeY);
-        } else {
-            this.movement = temp;
         }
     }
     

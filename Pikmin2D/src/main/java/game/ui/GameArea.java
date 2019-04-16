@@ -42,11 +42,12 @@ public class GameArea extends Application {
         screen.getChildren().add(redPikminCounterText);
         AtomicInteger redPikminCounter = new AtomicInteger();
         
-        screen.getChildren().add(playerUI.getGameObjectShape());
+        //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
             screen.getChildren().add(pikminUI.gameObjectShape);
         }
+        screen.getChildren().add(playerUI.getGameObjectShape());
         
         Scene scene = new Scene(screen);
         stage.setScene(scene);
@@ -119,21 +120,20 @@ public class GameArea extends Application {
                     recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
                 } else if (rowData[0].equals("Item")) {
                     //TODO
-                    System.out.println("Error: Object marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                 } else if (rowData[0].equals("Pikmin")) {
                          
                     if (rowData[1].equals("RED")) {
                         pikminUIs.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
                     } else if (rowData[1].equals("YELLOW")) {
-                        System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                        System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else if (rowData[1].equals("BLUE")) {
-                        System.out.println("Error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                        System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else {
-                        System.out.println("Error: PikminType marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                        System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                     }
                     
                 } else {
-                    System.out.println("Error: Object marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
+                    System.out.println("Non-fatal error: Object marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                 }
             }
         } catch (Exception e) {
