@@ -27,6 +27,7 @@ public class GameArea extends Application {
     static double paneHeight;
     
     static PlayerUI playerUI;
+    static RecoveryAreaUI recoveryAreaUI;
     static ArrayList<PikminUI> pikminUIs;
 
     @Override
@@ -42,6 +43,7 @@ public class GameArea extends Application {
         AtomicInteger redPikminCounter = new AtomicInteger();
         
         screen.getChildren().add(playerUI.getGameObjectShape());
+        screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
             screen.getChildren().add(pikminUI.gameObjectShape);
         }
@@ -114,8 +116,7 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("Player")) {
                     playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
                 } else if (rowData[0].equals("RecoveryArea")) {
-                    //TODO
-                    System.out.println("Error: Object marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
+                    recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
                 } else if (rowData[0].equals("Item")) {
                     //TODO
                     System.out.println("Error: Object marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
