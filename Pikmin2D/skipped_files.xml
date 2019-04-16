@@ -11,4 +11,7 @@
     <suppress files="game.ui.PlayerUI.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="game.ui.pikmin.PikminUI.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="game.ui.pikmin.RedPikminUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.CarriableUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.ItemUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.RecoveryAreaUI.java" checks="[a-zA-Z0-9]*"/>
 </suppressions> 
