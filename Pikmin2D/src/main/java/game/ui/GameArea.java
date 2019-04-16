@@ -47,6 +47,7 @@ public class GameArea extends Application {
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (ItemUI itemUI : itemUIs) {
             screen.getChildren().add(itemUI.gameObjectShape);
+            screen.getChildren().add(itemUI.getCarryCounter());
         }
         for (PikminUI pikminUI : pikminUIs) {
             screen.getChildren().add(pikminUI.gameObjectShape);
@@ -80,7 +81,7 @@ public class GameArea extends Application {
                 }
                 if (pressedButtons.getOrDefault(KeyCode.W, false)) {
                     playerUI.accelerate();
-                }
+                }            
                 
                 playerUI.move();
                 
@@ -97,6 +98,12 @@ public class GameArea extends Application {
                     if (collided.getPikmin().getType() == PikminType.RED) {
                         redPikminCounterText.setText("Red Pikmin: " + redPikminCounter.addAndGet(1));
                     }
+                });
+                
+                itemUIs.stream().forEach(itemUI -> {
+                    itemUI.accelerate();
+                    itemUI.move();
+                    itemUI.moveText();
                 });
             }
         }.start();
