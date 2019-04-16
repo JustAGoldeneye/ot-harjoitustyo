@@ -2,11 +2,11 @@
 
 ## Viikoittaisia huomioita
 
-Käytin tällä viikolla ajan pääosin luokkarakenteen selkeyttämiseen ja ongelmien ratkomiseen. Tämän vuoksi peliin ei ole tullut paljoa uusia ominaisuuksia.
+Käytin tällä viikolla ajan pääosin kannettavien esineiden ja niiden kantamismahdollisuuden työstämiseen, mutta tämä osoittautui yllättävän aikaa vieväksi, joten en saanut tätä ominaisuutta valmiiksi.
 
 ## Nykyiset ominaisuudet
 
-Pelin tällä hetkellä käyttäjälle helpoiten näkyvä ominaisuus on pelihahmon liikuttaminen. Pelihahmo pystyy keräämään mukaansa Pikmineitä, vaikka niillä ei voikaaan vielä tehdä mitään. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan ja Pikminien lisäämistä kartalle. Pelialueen kokon voi myös valita.
+Pelin tällä hetkellä käyttäjälle helpoiten näkyvä ominaisuus on pelihahmon liikuttaminen. Pelihahmo pystyy keräämään mukaansa Pikmineitä, vaikka niillä ei voikaaan vielä tehdä mitään. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan ja Pikminien lisäämistä kartalle. Pikmineille kannettavaksi tarkoitetun esineen esiversio on lisätty kartalle. Pelialueen kokoa voi myös valita.
 
 ### Pelin pelaaminen
 
