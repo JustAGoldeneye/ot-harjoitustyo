@@ -8,7 +8,7 @@ Käytin tällä viikolla ajan pääosin kannettavien esineiden ja niiden kantami
 
 Pelaaja voi liikuttaa hahmoa, ja Pikmineitä voi kerätä koskemalla niihin. Pikmineitä voi käskeä kantamaan kannettavia esineitä.
 
-Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan, Pikminien ja kannettavien esineiden lisäämistä kartalle. Pelialueen kokoa voi myös valita.
+Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan, Pikminien ja kannettavien esineiden lisäämistä kartalle. Pelialueen koon voi myös valita.
 
 ### Pelin pelaaminen
 
@@ -25,7 +25,7 @@ E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
 * [Vaatimusmäärittely](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Vaatimusmaarittely.md)
 * [Työaikakirjanpito](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Tyoaikakirjanpito.md)
 * [Arkkitehtuurikuvaus](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md) (kesken)
-* [Käyttöohje]()
+* [Käyttöohje](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Kayttoohje.md)
 
 ## Komentorivikomennot
 
