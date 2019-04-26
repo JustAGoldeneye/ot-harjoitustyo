@@ -5,7 +5,6 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
 import game.domain.Player;
-import game.domain.pikmin.PikminType;
 
 public class PlayerUI extends MovableObjectUI {
     

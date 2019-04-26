@@ -41,7 +41,6 @@ public class GameArea extends Application {
         
         Text redPikminCounterText = new Text(10, 20, "Red Pikmin: 0");
         screen.getChildren().add(redPikminCounterText);
-        AtomicInteger redPikminCounter = new AtomicInteger();
         
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
@@ -66,7 +65,13 @@ public class GameArea extends Application {
            pressedButtons.put(event.getCode(), Boolean.TRUE);
            
            if (event.getCode() == KeyCode.E) {
-               System.out.println("testi");
+               itemUIs.stream().forEach(itemUI -> {
+                    if (playerUI.collide(itemUI)) {
+                        itemUI.getCarriable().addPikmin(playerUI.getPlayer().commandPikmin(PikminType.RED)); //Add an abilyty to change the PikminType
+                        itemUI.updateCarryCounter();
+                        redPikminCounterText.setText("Red Pikmin: " + playerUI.getPlayer().pikminsInTeam(PikminType.RED));
+                    }
+                });
            }
         });
         
@@ -106,12 +111,12 @@ public class GameArea extends Application {
                     playerUI.getPlayer().addPikmin(collided.getPikmin().getType());
                     
                     if (collided.getPikmin().getType() == PikminType.RED) {
-                        redPikminCounterText.setText("Red Pikmin: " + redPikminCounter.addAndGet(1));
+                        redPikminCounterText.setText("Red Pikmin: " + playerUI.getPlayer().pikminsInTeam(PikminType.RED));
                     }
                 });
                 
-                itemUIs.stream().forEach(itemUI -> {
-                    itemUI.accelerate();
+                itemUIs.stream().forEach(itemUI -> { //TEMP
+                    //itemUI.accelerate();
                     itemUI.move();
                     itemUI.moveText();
                 });

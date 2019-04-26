@@ -27,8 +27,10 @@ public class Carriable {
      * @param pikmin 
      */
     public void addPikmin(Pikmin pikmin) {
-        this.pikminCarryStrenghtNow += pikmin.getStrength();
-        this.pikminsNow.add(pikmin);
+        if (pikmin != null) {
+            this.pikminCarryStrenghtNow += pikmin.getStrength();
+            this.pikminsNow.add(pikmin);
+        }
     }
     
     /**
@@ -60,5 +62,13 @@ public class Carriable {
 
     public int getWeight() {
         return weight;
+    }
+
+    public int getPikminCarryStrenghtNow() {
+        return pikminCarryStrenghtNow;
+    }
+
+    public int getMaxPikmins() {
+        return maxPikmins;
     }
 }

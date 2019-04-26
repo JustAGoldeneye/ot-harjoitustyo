@@ -8,4 +8,5 @@
 | 9.4.  | 9        | Sovellus- ja käyttöliittymälogiikan erittely, Pikminien lisäämisen aloittaminen, junit-ongelmien korjaaminen, javadocien lisääminen     |
 | 13.4. | 2        | Item- ja RecoveryArea- objektien työstämisen aloittaminen.                                                                              |
 | 16.4. | 8        | Esineiden keräämisen toiminallisuuden työstäminen                                                                                       |
+| 26.4. | (3)      | Javan asennuksen korjaaminen                                                                                                            |
 |Yht.   |30        |                                                                                                                                         |

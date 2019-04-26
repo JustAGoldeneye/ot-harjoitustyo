@@ -41,4 +41,8 @@ public class Player {
     public int[] getPikmins() {
         return pikmins;
     }
+    
+    public int pikminsInTeam(PikminType pikminType) {
+        return this.pikmins[pikminType.ordinal()];
+    }
 }
