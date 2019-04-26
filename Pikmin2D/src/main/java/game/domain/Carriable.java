@@ -11,7 +11,7 @@ import game.domain.pikmin.Pikmin;
 public class Carriable {
     private ArrayList<Pikmin> pikminsNow;
     private int maxPikmins;
-    private int pikminCarryStrenghtNow;
+    private int pikminCarryStrengthNow;
     private int weight;
     
     /**
@@ -21,7 +21,7 @@ public class Carriable {
      */
     public Carriable(int weight, int maxPikmins) {
         this.pikminsNow = new ArrayList<>();
-        this.pikminCarryStrenghtNow = 0;
+        this.pikminCarryStrengthNow = 0;
         this.weight = weight;
         this.maxPikmins = maxPikmins;
     }
@@ -32,7 +32,7 @@ public class Carriable {
      */
     public void addPikmin(Pikmin pikmin) {
         if (pikmin != null) {
-            this.pikminCarryStrenghtNow += pikmin.getStrength();
+            this.pikminCarryStrengthNow += pikmin.getStrength();
             this.pikminsNow.add(pikmin);
         }
     }
@@ -43,7 +43,7 @@ public class Carriable {
      */
     public ArrayList<Pikmin> removePikmins() {
         ArrayList<Pikmin> temp = this.pikminsNow;
-        this.pikminCarryStrenghtNow = 0;
+        this.pikminCarryStrengthNow = 0;
         this.pikminsNow = new ArrayList<>();
         return temp;
     }
@@ -53,7 +53,7 @@ public class Carriable {
      * @return The objects weight minus total Pikmin strength
      */
     public int extraStrength() {
-        return this.pikminCarryStrenghtNow - this.weight;
+        return this.pikminCarryStrengthNow - this.weight;
     }
     
     /**
@@ -69,7 +69,7 @@ public class Carriable {
     }
 
     public int getPikminCarryStrenghtNow() {
-        return pikminCarryStrenghtNow;
+        return pikminCarryStrengthNow;
     }
 
     public int getMaxPikmins() {
