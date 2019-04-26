@@ -62,11 +62,21 @@ public class GameArea extends Application {
         Map<KeyCode, Boolean> pressedButtons = new HashMap<>();
         
         scene.setOnKeyPressed(event -> {
+            
            pressedButtons.put(event.getCode(), Boolean.TRUE);
+           
+           if (event.getCode() == KeyCode.E) {
+               System.out.println("testi");
+           }
         });
+        
         scene.setOnKeyReleased(event -> {
+            
            pressedButtons.put(event.getCode(), Boolean.FALSE);
-           playerUI.stop();
+           
+           if (event.getCode() == KeyCode.W) {
+               playerUI.stop();
+           } 
         });
         
         new AnimationTimer() {
@@ -81,7 +91,7 @@ public class GameArea extends Application {
                 }
                 if (pressedButtons.getOrDefault(KeyCode.W, false)) {
                     playerUI.accelerate();
-                }            
+                }
                 
                 playerUI.move();
                 

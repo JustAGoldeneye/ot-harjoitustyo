@@ -4,7 +4,7 @@ import game.ui.GameArea;
 import javafx.application.Application;
 
 public class Main {
-    public final static boolean DEBUG_MODE = false;
+    public final static boolean DEBUG_MODE = true;
     /**
      * Launches the application.
      * 
