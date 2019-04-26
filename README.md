@@ -24,7 +24,8 @@ E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
 
 * [Vaatimusmäärittely](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Vaatimusmaarittely.md)
 * [Työaikakirjanpito](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Tyoaikakirjanpito.md)
-* [Arkkitehtuurisuunnitelma](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md)
+* [Arkkitehtuurikuvaus](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md) (kesken)
+* [Käyttöohje]()
 
 ## Komentorivikomennot
 
