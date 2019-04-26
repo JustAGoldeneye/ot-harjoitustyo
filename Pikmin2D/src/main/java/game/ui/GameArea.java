@@ -116,7 +116,9 @@ public class GameArea extends Application {
                 });
                 
                 itemUIs.stream().forEach(itemUI -> { //TEMP
-                    //itemUI.accelerate();
+                    if (itemUI.getCarriable().extraStrength() >= 0) {
+                        itemUI.accelerate();
+                    }
                     itemUI.move();
                     itemUI.moveText();
                 });

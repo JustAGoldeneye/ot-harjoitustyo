@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import game.domain.pikmin.Pikmin;
 
+/**
+ * Controls the information not related to JavaFX in a carriable object.
+ * @author eemeli
+ */
 public class Carriable {
     private ArrayList<Pikmin> pikminsNow;
     private int maxPikmins;

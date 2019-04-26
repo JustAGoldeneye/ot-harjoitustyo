@@ -2,6 +2,10 @@ package game.domain;
 
 import game.domain.pikmin.*;
 
+/**
+ * Controls the information not related to JavaFX in a player object.
+ * @author eemeli
+ */
 public class Player {
     private int[] pikmins;
     
@@ -42,6 +46,11 @@ public class Player {
         return pikmins;
     }
     
+    /**
+     * Get the amount of Pikmin of the specified type in the team.
+     * @param pikminType The type of Pikmin to be counted
+     * @return The amount of the specified Pikmin type in the team
+     */
     public int pikminsInTeam(PikminType pikminType) {
         return this.pikmins[pikminType.ordinal()];
     }

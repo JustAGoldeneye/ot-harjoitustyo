@@ -27,7 +27,7 @@
             <version>0.8.0</version>
             <configuration>
                 <excludes>
-                    <exclude>game/Main.java</exclude>
+                    <exclude>game/*</exclude>
                     <exclude>game/ui/*</exclude>
                     <exclude>game/ui/pikmin/*</exclude>
                 </excludes>

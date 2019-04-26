@@ -1,5 +1,9 @@
 package game.domain.pikmin;
 
+/**
+ * Creates a Pikmin object with red Pikmin's parameters.
+ * @author eemeli
+ */
 public class RedPikmin extends Pikmin {
     
     /**

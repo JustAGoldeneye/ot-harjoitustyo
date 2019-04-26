@@ -6,7 +6,9 @@ Käytin tällä viikolla ajan pääosin kannettavien esineiden ja niiden kantami
 
 ## Nykyiset ominaisuudet
 
-Pelin tällä hetkellä käyttäjälle helpoiten näkyvä ominaisuus on pelihahmon liikuttaminen. Pelihahmo pystyy keräämään mukaansa Pikmineitä, vaikka niillä ei voikaaan vielä tehdä mitään. Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan ja Pikminien lisäämistä kartalle. Pikmineille kannettavaksi tarkoitetun esineen esiversio on lisätty kartalle. Pelialueen kokoa voi myös valita.
+Pelaaja voi liikuttaa hahmoa, ja Pikmineitä voi kerätä koskemalla niihin. Pikmineitä voi käskeä kantamaan kannettavia esineitä.
+
+Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan, Pikminien ja kannettavien esineiden lisäämistä kartalle. Pelialueen kokoa voi myös valita.
 
 ### Pelin pelaaminen
 
@@ -15,6 +17,8 @@ W - Liiku eteenpäin
 A - Käänny vasemmalle
 
 D - Käänny oikealle
+
+E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
 
 ## Dokumentaatio
 

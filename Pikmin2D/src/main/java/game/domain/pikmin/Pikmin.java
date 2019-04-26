@@ -2,6 +2,10 @@ package game.domain.pikmin;
 
 import java.util.Objects;
 
+/**
+ * Controls the information not related to JavaFX in a Pikmin object.
+ * @author eemeli
+ */
 public abstract class Pikmin {
     protected final PikminType type;
     protected final String name;
