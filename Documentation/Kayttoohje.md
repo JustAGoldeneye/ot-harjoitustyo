@@ -18,5 +18,5 @@ E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
 
 ## Modattavuus
 
-Pelaajaan on helppo muokata pelialuetta haluamakseen pkmp.tiedostojen avulla. [testmap1.pkmp]() sisältää dokumentaatiota karttatiedostomuodon käytöstä.
-Pelissä on myös debug mode, mikä tekee näkymättömistä peliobjekteista näkyviä. Tällä hetkellä se voidaan kytkeä käyttöön manuaalisesti [Main]()-luokasta
+Pelaajaan on helppo muokata pelialuetta haluamakseen pkmp.tiedostojen avulla. [testmap1.pkmp](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin2D/maps/testmap1.pkmp) sisältää dokumentaatiota karttatiedostomuodon käytöstä.
+Pelissä on myös debug mode, mikä tekee näkymättömistä peliobjekteista näkyviä. Tällä hetkellä se voidaan kytkeä käyttöön manuaalisesti [Main](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Pikmin2D/src/main/java/game/Main.java)-luokasta
