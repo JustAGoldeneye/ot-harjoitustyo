@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import javafx.animation.AnimationTimer;
@@ -28,6 +27,7 @@ public class GameArea extends Application {
     
     static PlayerUI playerUI;
     static RecoveryAreaUI recoveryAreaUI;
+    static ArrayList<WallUI> wallUIs;
     static ArrayList<PikminUI> pikminUIs;
     static ArrayList<ItemUI> itemUIs;
 
@@ -45,13 +45,16 @@ public class GameArea extends Application {
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (ItemUI itemUI : itemUIs) {
-            screen.getChildren().add(itemUI.gameObjectShape);
+            screen.getChildren().add(itemUI.getGameObjectShape());
             screen.getChildren().add(itemUI.getCarryCounter());
         }
         for (PikminUI pikminUI : pikminUIs) {
-            screen.getChildren().add(pikminUI.gameObjectShape);
+            screen.getChildren().add(pikminUI.getGameObjectShape());
         }
         screen.getChildren().add(playerUI.getGameObjectShape());
+        for (WallUI wallUI : wallUIs) {
+            screen.getChildren().add(wallUI.getGameObjectShape());
+        }
         
         Scene scene = new Scene(screen);
         stage.setScene(scene);
@@ -128,9 +131,12 @@ public class GameArea extends Application {
     
     public void importMapInfo(String fileName) {
         try (Scanner fReader = new Scanner(new File(fileName))) {
+            
             boolean firstRow = true;
             pikminUIs = new ArrayList<>();
             itemUIs = new ArrayList<>();
+            wallUIs = new ArrayList<>();
+            
             while (fReader.hasNextLine()) {
                 String row = fReader.nextLine();
                 if (row.startsWith("#") || row.isEmpty()) {
@@ -147,6 +153,8 @@ public class GameArea extends Application {
                     playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
                 } else if (rowData[0].equals("RecoveryArea")) {
                     recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
+                } else if (rowData[0].equals("Wall")) {
+                    wallUIs.add(new WallUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4])));
                 } else if (rowData[0].equals("Item")) {
                    
                    if (rowData[3].equals("Circle")) {

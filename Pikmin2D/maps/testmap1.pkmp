@@ -6,6 +6,12 @@
 Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
 RecoveryArea,130,870,40#object,xPos,yPos,radius
 
+#Create walls
+Wall,200,450,100,20#object,xPos,yPos,witdh,height
+
+#Create paths
+#TODO
+
 #Create carriable items
 Item,10,20,Circle,400,700,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
 

@@ -12,4 +12,9 @@ public abstract class GameObjectUI {
     public Shape getGameObjectShape() {
         return gameObjectShape;
     }
+        
+    public boolean collide(GameObjectUI target) {
+        Shape hitArea = Shape.intersect(this.gameObjectShape, target.getGameObjectShape());
+        return hitArea.getBoundsInLocal().getWidth() != -1;
+    }
 }
