@@ -7,7 +7,9 @@ Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radi
 RecoveryArea,130,870,40#object,xPos,yPos,radius
 
 #Create walls
-Wall,200,450,100,20#object,xPos,yPos,witdh,height
+#List of colors: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html
+Wall,200,200,0,500,60,DARKOLIVEGREEN#object,xPos,yPos,rotation,witdh,height,color
+Wall,400,300,90,500,60,DARKOLIVEGREEN#object,xPos,yPos,rotation,witdh,height,color
 
 #Create paths
 #TODO

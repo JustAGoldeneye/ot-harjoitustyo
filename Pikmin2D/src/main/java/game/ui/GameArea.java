@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javafx.scene.paint.Color;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -101,7 +102,17 @@ public class GameArea extends Application {
                     playerUI.accelerate();
                 }
                 
-                playerUI.move();
+                wallUIs.stream().forEach(wallUI -> {
+                    if (playerUI.collide(wallUI)) {
+                        playerUI.setCollidingWithWallTrue();
+                    }
+                });
+                
+                if (playerUI.canMove()) {
+                    playerUI.move();
+                } else {
+                    playerUI.escapeWall();
+                }
                 
                 List<PikminUI> collidedList = pikminUIs.stream()
                         .filter(pikminUI -> playerUI.collide(pikminUI))
@@ -154,7 +165,7 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("RecoveryArea")) {
                     recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
                 } else if (rowData[0].equals("Wall")) {
-                    wallUIs.add(new WallUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4])));
+                    wallUIs.add(new WallUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Color.valueOf(rowData[6])));
                 } else if (rowData[0].equals("Item")) {
                    
                    if (rowData[3].equals("Circle")) {
