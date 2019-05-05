@@ -32,6 +32,7 @@ public class GameArea extends Application {
     static double paneHeight;
     static Image backgroundImage;
     
+    static SaveControl saveControl;
     static PlayerUI playerUI;
     static RecoveryAreaUI recoveryAreaUI;
     static ArrayList<WallUI> wallUIs;
@@ -39,10 +40,12 @@ public class GameArea extends Application {
     static ArrayList<PikminUI> pikminUIs;
     static ArrayList<ItemUI> itemUIs;
     static ArrayList<ItemUI> collectedItemUIs;
+    static ArrayList<PikminUI> collectedPikminUIs;
 
     @Override
     public void start(Stage stage) throws Exception {
-        importMapInfo("maps/testmap1.pkmp");
+        saveControl = new SaveControl(0, "testmap1");
+        importMapInfo();
         
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);        
@@ -63,11 +66,15 @@ public class GameArea extends Application {
         }
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (PikminUI pikminUI : pikminUIs) {
-            screen.getChildren().add(pikminUI.getGameObjectShape());
+            if (!pikminUI.isSaved()) {
+                screen.getChildren().add(pikminUI.getGameObjectShape());
+            }          
         }
         for (ItemUI itemUI : itemUIs) {
-            screen.getChildren().add(itemUI.getGameObjectShape());
-            screen.getChildren().add(itemUI.getCarryCounter());
+            if (!itemUI.isSaved()) {
+                screen.getChildren().add(itemUI.getGameObjectShape());
+                screen.getChildren().add(itemUI.getCarryCounter());
+            }
         }
         screen.getChildren().add(playerUI.getGameObjectShape());
         for (WallUI wallUI : wallUIs) {
@@ -86,7 +93,7 @@ public class GameArea extends Application {
             
            pressedButtons.put(event.getCode(), Boolean.TRUE);
            
-           if (event.getCode() == KeyCode.E) {
+           if (event.getCode() == KeyCode.ENTER) {
                itemUIs.stream().forEach(itemUI -> {
                     if (playerUI.collide(itemUI)) {
                         itemUI.getCarriable().addPikmin(playerUI.getPlayer().commandPikmin(PikminType.RED)); //Add an abilyty to change the PikminType
@@ -105,7 +112,20 @@ public class GameArea extends Application {
                playerUI.stop();
            }
            if (event.getCode() == KeyCode.P) {
-                SaveControl.save(0, "testmap1", collectedItemUIs);
+                saveControl.save(collectedItemUIs, collectedPikminUIs);
+           }
+           if (event.getCode() == KeyCode.I) {
+               stage.close();
+           }
+           if (event.getCode() == KeyCode.O) {
+               if (stage.isFullScreen()) {
+                   stage.setFullScreen(false);
+               } else {
+                   stage.setFullScreen(true);
+               }
+           }
+           if (event.getCode() == KeyCode.U) {
+               saveControl.emptySave();
            }
         });
         
@@ -159,7 +179,8 @@ public class GameArea extends Application {
                         .collect(Collectors.toList());
                 collidedList.stream().forEach(collided -> {
                     
-                    pikminUIs.remove(collided);                          
+                    pikminUIs.remove(collided);  
+                    collectedPikminUIs.add(collided);
                     screen.getChildren().remove(collided.getGameObjectShape());
                     
                     playerUI.getPlayer().addPikmin(collided.getPikmin().getType());
@@ -180,14 +201,15 @@ public class GameArea extends Application {
         }.start();
     }
     
-    public void importMapInfo(String fileName) {
-        try (Scanner fReader = new Scanner(new File(fileName))) {
+    public static void importMapInfo() {
+        try (Scanner fReader = new Scanner(new File(saveControl.mapFileName()))) {
             
             boolean firstRow = true;
-            int currentItemUIid = 0;
+            int currentEntityID = 0;
             pikminUIs = new ArrayList<>();
             itemUIs = new ArrayList<>();
             collectedItemUIs = new ArrayList<>();
+            collectedPikminUIs = new ArrayList<>();
             wallUIs = new ArrayList<>();
             pathUIs = new ArrayList<>();
             
@@ -217,10 +239,12 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("Path")) {
                     pathUIs.add(new PathUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5])));
                 } else if (rowData[0].equals("Item")) {
-                   //Load still if currentItemUIid on saves but mark as saved and set cordinates 5000,5000.
                    if (rowData[3].equals("Circle")) {
-                       itemUIs.add(new ItemUI(Integer.valueOf(rowData[1]), Integer.valueOf(rowData[2]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Double.valueOf(rowData[6]), rowData[7], currentItemUIid));
-                       currentItemUIid++;
+                       ItemUI itemUI = new ItemUI(Integer.valueOf(rowData[1]), Integer.valueOf(rowData[2]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Double.valueOf(rowData[6]), rowData[7], currentEntityID);
+                       if (saveControl.hasBeenCollected(currentEntityID)) {
+                           itemUI.markAsSaved();
+                       }   
+                       itemUIs.add(itemUI);                    
                    } else {
                        System.out.println("Non-fatal error: Shape marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                    }
@@ -228,7 +252,11 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("Pikmin")) {
                          
                     if (rowData[1].equals("RED")) {
-                        pikminUIs.add(new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin()));
+                        RedPikminUI redPikminUI = new RedPikminUI(Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), new RedPikmin(), currentEntityID);
+                        if (saveControl.hasBeenCollected(currentEntityID)) {
+                            redPikminUI.markAsSaved();
+                        }
+                        pikminUIs.add(redPikminUI);
                     } else if (rowData[1].equals("YELLOW")) {
                         System.out.println("Non-fatal in-DEV error: PikminType marker on row " + row + " in the map info file was read but its feature hasn't been implemented yet. The object wasn't loaded.");
                     } else if (rowData[1].equals("BLUE")) {
@@ -240,6 +268,7 @@ public class GameArea extends Application {
                 } else {
                     System.out.println("Non-fatal error: Object marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                 }
+                currentEntityID++;
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

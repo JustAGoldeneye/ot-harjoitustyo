@@ -6,7 +6,7 @@ import javafx.scene.shape.Circle;
 
 import game.domain.Carriable;
 
-public class ItemUI extends CarriableUI {
+public class ItemUI extends CarriableUI implements Saveable {
     private final int id;
     private boolean saved;
     
@@ -18,14 +18,17 @@ public class ItemUI extends CarriableUI {
         this.id = id;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public boolean isSaved() {
         return saved;
     }
     
+    @Override
     public void markAsSaved() {
         this.saved = true;
     }
