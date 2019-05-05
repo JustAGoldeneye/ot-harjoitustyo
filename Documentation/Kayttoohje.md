@@ -1,8 +1,10 @@
 # Käyttöohje
 
-## Nykyiset ominaisuudet
+## Ominaisuudet
 
-Pelaaja voi liikuttaa hahmoa, ja Pikmineitä voi kerätä koskemalla niihin. Pikmineitä voi käskeä kantamaan kannettavia esineitä.
+Pelaaja voi liikuttaa hahmoa, ja Pikmineitä voi kerätä koskemalla niihin. Pikmineitä voi käskeä kantamaan kannettavia esineitä maalialueelle. Varsinaisia esteitä en vielä kerennyt lisätä.
+
+Kartan tilan voi tallentaa.
 
 Tämän lisäksi ohjelman importMapInfo-metodi pystyy lukemaan pelialueen tiedot maps-kansiossa olevasta tiedostosta. Tämä karttatiedostomuoto (.pkmp) tukee tällä hetkellä pelaajan, Pikminien ja kannettavien esineiden lisäämistä kartalle. Pelialueen koon voi myös valita tätä kautta.
 
@@ -14,7 +16,15 @@ A - Käänny vasemmalle
 
 D - Käänny oikealle
 
-E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
+Enter - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
+
+P - Tallenna esineiden ja Pikminien määrä
+
+O - Säätää kokonäytön tilaa
+
+P - Sulkee pelin
+
+I - Tyhjentää tallennustiedoston ja sulkee pelin
 
 ## Modattavuus
 

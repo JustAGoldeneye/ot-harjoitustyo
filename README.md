@@ -1,9 +1,5 @@
 # Pikmin 2D
 
-## Viikoittaisia huomioita
-
-Käytin tällä viikolla ajan pääosin kannettavien esineiden ja niiden kantamismahdollisuuden työstämiseen, mutta tämä osoittautui yllättävän aikaa vieväksi, joten en saanut tätä ominaisuutta valmiiksi.
-
 ## Nykyiset ominaisuudet
 
 Pelaaja voi liikuttaa hahmoa, ja Pikmineitä voi kerätä koskemalla niihin. Pikmineitä voi käskeä kantamaan kannettavia esineitä.
@@ -18,13 +14,21 @@ A - Käänny vasemmalle
 
 D - Käänny oikealle
 
-E - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
+Enter - Käske Pikmin kantamaan esinettä, kun pelaajahahmo koskee esineeseen
+
+P - Tallenna esineiden ja Pikminien määrä
+
+O - Säätää kokonäytön tilaa
+
+P - Sulkee pelin
+
+I - Tyhjentää tallennustiedoston ja sulkee pelin
 
 ## Dokumentaatio
 
 * [Vaatimusmäärittely](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Vaatimusmaarittely.md)
 * [Työaikakirjanpito](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Tyoaikakirjanpito.md)
-* [Arkkitehtuurikuvaus](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md) (kesken)
+* [Arkkitehtuurikuvaus](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/arkkitehtuuri.md)
 * [Käyttöohje](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Kayttoohje.md)
 
 ## Komentorivikomennot

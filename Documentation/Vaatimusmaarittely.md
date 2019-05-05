@@ -20,7 +20,6 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 * Yksinketainen path-finding-järjestelmä
   * Tarvitaan, jotta Pikminit voisivat tuoda esineitä takaisin avaruusalukselle ja sipulille.
   * Toeutetaan lisäämällä alueen karttaan näkymättömiä suorkulmioita, jollaiseen liikkuessaan esinettä kantava Pikmin-ryhmä alkaa seurata suorakulmioon määriteltyä suuntaa. Tarkoituksena on luoda näkymätön reittien verkosto, jota käyttämällä Pikminit löytävät aina perille alukseen tai sipuliin.
-    * Jos Pikmnit eivät ole suorakulmion kohdalla, kävelevät ne suoraan alusta tai sipulia kohti.
     * Myös alkuperäinen Pikmin-peli käyttää hyvin samantapaista menetelmää.
     * Pikminien ei ikinä tarvitse liikkua seuraamatta pelaajaa muualle kuin alusta kohti, joten monimutkaisempaa path-finding-algoritmia ei tarvita.
 * Ohjaus
@@ -28,14 +27,9 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
   * Pelaaja voi käskeä Pikmineitä seuraamaan häntä kävelemällä niiden läheltä.
   * Pelaaja voi heittää Pikmineitä esineisiin
   * Kun esineellä on sen painoon nähden tarpeeksi Pikmineitä, kantavat Pikminit esineen takaisin avaruusalukseen tai sipuliin.
-* Pikminien hallinta
-  * Mahdollisuus kasvattaa uusia Pikmineitä kantamalla ravinnepellettejä ja viholliseten ruhoja takaisin sipuliin.
-   * Mahdollisuus säilöä Pikminejä sipuliin.
-  * Jokin rajoitus yhtä aikaa sipulista ulkona olevien Pikminien määrälle
 * Käyttöliittymä
   * Pelin aikainen näkymä
     * Pikmnieen määrä seuraamassa johtajaa
-    * Pikmnien määrä ulkona
 * Grafiikat
   * Yksinkertaiset
   * Eri asiat pitää pystyä erottamaan toisistaan.
@@ -49,6 +43,9 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 * Pelaaja voi ksäkeä kauempanan olevia Pikmineitä liittymään joukkoonsa.
 * Pelaaja voi jättää nykyisen Pikmin-joukkonsa jonnekin.
 * Pikminien hallinta
+  * Mahdollisuus kasvattaa uusia Pikmineitä kantamalla ravinnepellettejä ja viholliseten ruhoja takaisin sipuliin.
+  * Mahdollisuus säilöä Pikminejä sipuliin.
+  * Jokin rajoitus yhtä aikaa sipulista ulkona olevien Pikminien määrälle
   * Pikmineitä on useampaa tyyppiä.
     * Eri tyypeillä on hieman erilaisia ominaisuuksia kuten taisteluvoima, kantokyky ja tulen sieto.
 * Taistelu
@@ -59,6 +56,7 @@ Havainnollistus pelin kartasta debug-tilassa. Mustat nuolet kuvaavat esineen rei
 * Pelaajaa seuraava kamera
 * Pelaajaa seuraavat Pikminit näkyvät kävelemässä pelaajan perässä.
 * Käyttöliittymä
+  * Pikmnien määrä ulkona
   * Tallennustiedoston valinta
   * Alueenavalintanäyttö
   * Pelin aikainen näkymä

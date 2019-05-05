@@ -10,4 +10,6 @@
 | 16.4. | 8        | Esineiden keräämisen toiminallisuuden työstäminen.                                                                                      |
 | 26.4. | (3)      | Javan asennuksen korjaaminen                                                                                                            |
 | 26.4. | 4        | Esineiden keräämisen toiminallisuuden työstäminen edelleen.                                                                             |
-|Yht.   | 34 (37)  |                                                                                                                                         |
+| 5.5.  | 5        | Esineiden keräämisen toiminallisuuden työstäminen edelleen: PathFinding-jäjestelmä.                                                     |
+| 5.5.  | 9        | Esineiden keräämisen toiminallisuuden työstäminen edelleen, dokumentaation tekeminen.                                                   |
+|Yht.   | 49 (52)  |                                                                                                                                         |
