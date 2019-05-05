@@ -126,6 +126,7 @@ public class GameArea extends Application {
            }
            if (event.getCode() == KeyCode.U) {
                saveControl.emptySave();
+               stage.close();
            }
         });
         
@@ -190,7 +191,7 @@ public class GameArea extends Application {
                     }
                 });
                 
-                itemUIs.stream().forEach(itemUI -> { //TEMP
+                itemUIs.stream().forEach(itemUI -> { //Must be expanded later
                     if (itemUI.getCarriable().extraStrength() >= 0) {
                         itemUI.accelerate();
                     }

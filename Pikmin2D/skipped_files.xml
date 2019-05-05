@@ -14,4 +14,7 @@
     <suppress files="game.ui.CarriableUI.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="game.ui.ItemUI.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="game.ui.RecoveryAreaUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.PathUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.Saveable.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="game.ui.WallUI.java" checks="[a-zA-Z0-9]*"/>
 </suppressions> 
