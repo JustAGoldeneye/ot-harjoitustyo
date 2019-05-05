@@ -36,7 +36,7 @@ public abstract class CarriableUI extends MovableObjectUI {
     }
 
     public Text getCarryCounter() {
-        return carryCounter;
+        return this.carryCounter;
     }
     
     public void moveText() {

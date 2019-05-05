@@ -37,6 +37,7 @@ public class GameArea extends Application {
     static ArrayList<PathUI> pathUIs;
     static ArrayList<PikminUI> pikminUIs;
     static ArrayList<ItemUI> itemUIs;
+    static ArrayList<ItemUI> collectedItemUIs;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -46,28 +47,32 @@ public class GameArea extends Application {
         Pane screen = new Pane();
         screen.setPrefSize(paneWidth, paneHeight);
         
-        Text redPikminCounterText = new Text(10, 20, "Red Pikmin: 0");
+        Text redPikminCounterText = new Text(10, 20, "Red Pikmin: " + playerUI.getPlayer().pikminsInTeam(PikminType.RED));
         redPikminCounterText.setFill(Color.RED);
         redPikminCounterText.setFont(Font.font(20));
         screen.getChildren().add(redPikminCounterText);
+        
+        Text itemsCollectedText = new Text(10, 40, "Items collected: " + collectedItemUIs.size());
+        itemsCollectedText.setFill(Color.CORNFLOWERBLUE);
+        itemsCollectedText.setFont(Font.font(20));
+        screen.getChildren().add(itemsCollectedText);
         
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
         for (PathUI pathUI : pathUIs) {
             screen.getChildren().add(pathUI.getGameObjectShape());
         }
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
+        for (PikminUI pikminUI : pikminUIs) {
+            screen.getChildren().add(pikminUI.getGameObjectShape());
+        }
         for (ItemUI itemUI : itemUIs) {
             screen.getChildren().add(itemUI.getGameObjectShape());
             screen.getChildren().add(itemUI.getCarryCounter());
-        }
-        for (PikminUI pikminUI : pikminUIs) {
-            screen.getChildren().add(pikminUI.getGameObjectShape());
         }
         screen.getChildren().add(playerUI.getGameObjectShape());
         for (WallUI wallUI : wallUIs) {
             screen.getChildren().add(wallUI.getGameObjectShape());
         }
-        
         Scene scene = new Scene(screen);
         stage.setScene(scene);
         stage.setTitle("Pikmin 2D");
@@ -119,7 +124,6 @@ public class GameArea extends Application {
                         playerUI.setCollidingWithWallTrue();
                     }
                 });
-                
                 pathUIs.stream().forEach(pathUI -> {
                     itemUIs.stream().forEach(itemUI -> {
                         if (itemUI.collide(pathUI)) {
@@ -133,6 +137,18 @@ public class GameArea extends Application {
                 } else {
                     playerUI.escapeWall();
                 }
+                
+                List<ItemUI> collectedList = itemUIs.stream()
+                        .filter(itemUI -> recoveryAreaUI.collide(itemUI))
+                        .collect(Collectors.toList());
+                collectedList.stream().forEach(collected -> {
+                    
+                    itemUIs.remove(collected);
+                    collectedItemUIs.add(collected);
+                    itemsCollectedText.setText("Items collected: " + collectedItemUIs.size());
+                    screen.getChildren().remove(collected.getCarryCounter());
+                    screen.getChildren().remove(collected.getGameObjectShape());
+                });
                 
                 List<PikminUI> collidedList = pikminUIs.stream()
                         .filter(pikminUI -> playerUI.collide(pikminUI))
@@ -166,6 +182,7 @@ public class GameArea extends Application {
             boolean firstRow = true;
             pikminUIs = new ArrayList<>();
             itemUIs = new ArrayList<>();
+            collectedItemUIs = new ArrayList<>();
             wallUIs = new ArrayList<>();
             pathUIs = new ArrayList<>();
             

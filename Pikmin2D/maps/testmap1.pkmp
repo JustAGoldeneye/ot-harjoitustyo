@@ -4,7 +4,7 @@
 
 #Create base gameplay objects
 Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
-RecoveryArea,130,870,40#object,xPos,yPos,radius
+RecoveryArea,800,870,40#object,xPos,yPos,radius
 
 #Create walls
 #List of colors: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html
@@ -19,6 +19,7 @@ Path,300,900,0,300,200#xPos,yPos,rotation,witdh,height
 
 #Create carriable items
 Item,10,20,Circle,200,400,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
+Item,10,20,Circle,200,300,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
 
 #Create Pikmin
 Pikmin,RED,200,500#object,PikminType,xPos,yPos
