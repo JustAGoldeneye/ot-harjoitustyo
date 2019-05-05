@@ -2,7 +2,7 @@ package game.ui;
 
 import game.Main;
 import game.domain.Carriable;
-import java.awt.Font;
+import javafx.scene.text.Font;
 
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
@@ -16,8 +16,9 @@ public abstract class CarriableUI extends MovableObjectUI {
     public CarriableUI(Shape shape, int rotationModifier, double accelerationModifier, Carriable carriable, double xPos, double yPos) {
         super(shape, rotationModifier, accelerationModifier, 0);
         this.carriable = carriable;
-        this.carryCounter = new Text(xPos-20, yPos+5, "0/" + this.carriable.getWeight());
+        this.carryCounter = new Text(xPos-20, yPos+7, "0/" + this.carriable.getWeight());
         this.carryCounterColor = Color.CORNFLOWERBLUE;
+        this.carryCounter.setFont(Font.font(20));
         if (Main.DEBUG_MODE) {
             this.carryCounter.setFill(Color.DEEPPINK);
         } else {

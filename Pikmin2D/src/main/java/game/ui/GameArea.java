@@ -14,6 +14,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.text.Font;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -25,6 +28,7 @@ import javafx.scene.text.Text;
 public class GameArea extends Application {
     static double paneWidth;
     static double paneHeight;
+    static Image backgroundImage;
     
     static PlayerUI playerUI;
     static RecoveryAreaUI recoveryAreaUI;
@@ -41,6 +45,8 @@ public class GameArea extends Application {
         screen.setPrefSize(paneWidth, paneHeight);
         
         Text redPikminCounterText = new Text(10, 20, "Red Pikmin: 0");
+        redPikminCounterText.setFill(Color.RED);
+        redPikminCounterText.setFont(Font.font(20));
         screen.getChildren().add(redPikminCounterText);
         
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
@@ -60,6 +66,7 @@ public class GameArea extends Application {
         Scene scene = new Scene(screen);
         stage.setScene(scene);
         stage.setTitle("Pikmin 2D");
+        scene.setFill(new ImagePattern(backgroundImage));
         stage.show();
         
         Map<KeyCode, Boolean> pressedButtons = new HashMap<>();
@@ -159,6 +166,8 @@ public class GameArea extends Application {
                     firstRow = false;
                     paneWidth = Double.valueOf(rowData[0]);
                     paneHeight = Double.valueOf(rowData[1]);
+                    backgroundImage = new Image(rowData[2], false);
+                    
                     
                 } else if (rowData[0].equals("Player")) {
                     playerUI = new PlayerUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), rowData[5], new Player());
