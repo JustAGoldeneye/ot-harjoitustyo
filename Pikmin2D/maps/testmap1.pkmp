@@ -1,6 +1,6 @@
 #Create game area
 #This row must always be first in the file. After that the order of rows doesn't matter.
-1920,1080,file:graphics/BackgroundTest1.png#mapWidth,mapHeight,mapBackground
+1920,1080,file:graphics/BackgroundTest1.png,true#mapWidth,mapHeight,mapBackground,debugMode
 
 #Create base gameplay objects
 Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
@@ -12,7 +12,8 @@ Wall,200,200,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 Wall,400,300,90,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 
 #Create paths
-#TODO
+#The direction towards which the path turns the carriable object is determined by the rotation value of the path.
+Path,200,500,90,50,40#xPos,yPos,rotation,witdh,height
 
 #Create carriable items
 Item,10,20,Circle,400,700,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image

@@ -1,5 +1,6 @@
 package game.ui;
 
+import game.Main;
 import game.domain.pikmin.RedPikmin;
 import game.domain.pikmin.PikminType;
 import game.domain.*;
@@ -167,6 +168,9 @@ public class GameArea extends Application {
                     paneWidth = Double.valueOf(rowData[0]);
                     paneHeight = Double.valueOf(rowData[1]);
                     backgroundImage = new Image(rowData[2], false);
+                    if (rowData[3].equals("true")) {
+                        Main.debugMode = true;
+                    }
                     
                     
                 } else if (rowData[0].equals("Player")) {

@@ -8,7 +8,7 @@ public class Main {
      * Toggles the debug mode.
      * Debug mode makes invisible object visible as DEEPPINK.
      */
-    public final static boolean DEBUG_MODE = true;
+    public static boolean debugMode = false;
     /**
      * Launches the application.
      * 
