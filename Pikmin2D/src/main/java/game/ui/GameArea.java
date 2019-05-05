@@ -34,6 +34,7 @@ public class GameArea extends Application {
     static PlayerUI playerUI;
     static RecoveryAreaUI recoveryAreaUI;
     static ArrayList<WallUI> wallUIs;
+    static ArrayList<PathUI> pathUIs;
     static ArrayList<PikminUI> pikminUIs;
     static ArrayList<ItemUI> itemUIs;
 
@@ -51,6 +52,9 @@ public class GameArea extends Application {
         screen.getChildren().add(redPikminCounterText);
         
         //The order of loading objects changes overlapping: Earlier loaded objects go back and later front.
+        for (PathUI pathUI : pathUIs) {
+            screen.getChildren().add(pathUI.getGameObjectShape());
+        }
         screen.getChildren().add(recoveryAreaUI.getGameObjectShape());
         for (ItemUI itemUI : itemUIs) {
             screen.getChildren().add(itemUI.getGameObjectShape());
@@ -116,6 +120,14 @@ public class GameArea extends Application {
                     }
                 });
                 
+                pathUIs.stream().forEach(pathUI -> {
+                    itemUIs.stream().forEach(itemUI -> {
+                        if (itemUI.collide(pathUI)) {
+                            itemUI.changeRotation(pathUI.pathsRotation());
+                        }
+                    });
+                });
+                
                 if (playerUI.canMove()) {
                     playerUI.move();
                 } else {
@@ -155,6 +167,7 @@ public class GameArea extends Application {
             pikminUIs = new ArrayList<>();
             itemUIs = new ArrayList<>();
             wallUIs = new ArrayList<>();
+            pathUIs = new ArrayList<>();
             
             while (fReader.hasNextLine()) {
                 String row = fReader.nextLine();
@@ -179,6 +192,8 @@ public class GameArea extends Application {
                     recoveryAreaUI = new RecoveryAreaUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]));
                 } else if (rowData[0].equals("Wall")) {
                     wallUIs.add(new WallUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Color.valueOf(rowData[6])));
+                } else if (rowData[0].equals("Path")) {
+                    pathUIs.add(new PathUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5])));
                 } else if (rowData[0].equals("Item")) {
                    
                    if (rowData[3].equals("Circle")) {
@@ -186,6 +201,7 @@ public class GameArea extends Application {
                    } else {
                        System.out.println("Non-fatal error: Shape marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                    }
+                   
                 } else if (rowData[0].equals("Pikmin")) {
                          
                     if (rowData[1].equals("RED")) {

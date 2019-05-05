@@ -13,10 +13,12 @@ Wall,400,300,90,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 
 #Create paths
 #The direction towards which the path turns the carriable object is determined by the rotation value of the path.
-Path,200,500,90,50,40#xPos,yPos,rotation,witdh,height
+Path,0,300,90,300,200#xPos,yPos,rotation,witdh,height
+Path,150,700,45,300,200#xPos,yPos,rotation,witdh,height
+Path,300,900,0,300,200#xPos,yPos,rotation,witdh,height
 
 #Create carriable items
-Item,10,20,Circle,400,700,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
+Item,10,20,Circle,200,400,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
 
 #Create Pikmin
 Pikmin,RED,200,500#object,PikminType,xPos,yPos

@@ -44,4 +44,11 @@ public abstract class MovableObjectUI extends GameObjectUI {
         this.gameObjectShape.setTranslateX(this.gameObjectShape.getTranslateX() + this.movement.getX());
         this.gameObjectShape.setTranslateY(this.gameObjectShape.getTranslateY() + this.movement.getY());
     }
+    
+    public void changeRotation(double rotation) {
+        if (rotation != this.gameObjectShape.getRotate()) {
+            this.stop();
+            this.gameObjectShape.setRotate(rotation);
+        }
+    }
 }
