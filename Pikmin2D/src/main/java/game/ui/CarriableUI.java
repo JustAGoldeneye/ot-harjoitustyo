@@ -20,7 +20,7 @@ public abstract class CarriableUI extends MovableObjectUI {
         this.carryCounterColor = Color.CORNFLOWERBLUE;
         this.carryCounter.setFont(Font.font(20));
         if (Main.debugMode) {
-            this.carryCounter.setFill(Color.DEEPPINK);
+            this.carryCounter.setFill(Color.PINK);
         } else {
             this.carryCounter.setFill(Color.TRANSPARENT);
         }
@@ -66,14 +66,14 @@ public abstract class CarriableUI extends MovableObjectUI {
     
     private void hideCarryCounter() {
         if (Main.debugMode) {
-            this.carryCounter.setFill(Color.DEEPPINK);
+            this.carryCounter.setFill(Color.PINK);
         } else {
             this.carryCounter.setFill(Color.TRANSPARENT);
         }
     }
     
     private boolean carryCounterIsVisible() {
-        if (this.carryCounter.getFill() == Color.TRANSPARENT || this.carryCounter.getFill() == Color.DEEPPINK) {
+        if (this.carryCounter.getFill() == Color.TRANSPARENT || this.carryCounter.getFill() == Color.PINK) {
             return false;
         }
         return true;

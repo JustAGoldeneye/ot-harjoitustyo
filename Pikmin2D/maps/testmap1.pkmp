@@ -1,29 +1,36 @@
 #Create game area
 #This row must always be first in the file. After that the order of rows doesn't matter.
-1920,1080,file:graphics/BackgroundTest1.png,true#mapWidth,mapHeight,mapBackground,debugMode
+1920,1080,file:graphics/BackgroundTest1.png,false#mapWidth,mapHeight,mapBackground,debugMode
 
 #Create base gameplay objects
-Player,30,770,315,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
-RecoveryArea,800,870,40#object,xPos,yPos,radius
+Player,30,770,0,20,file:graphics/PlayerTest.png#object,xPos,yPos,rotation,radius,image
+RecoveryArea,200,880,40#object,xPos,yPos,radius
 
 #Create walls
 #List of colors: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html
+
+#Create border walls
 Wall,-20,0,0,20,1080,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Left border wall
 Wall,1920,0,0,20,1080,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Right border wall
 Wall,0,-20,0,1920,20,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Up border wall
 Wall,0,1080,0,1920,20,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Down border wall
-Wall,200,200,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
-Wall,400,300,90,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
+
+Wall,500,0,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
+Wall,500,500,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
+Wall,500,0,0,60,440,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
+Wall,1300,600,0,60,500,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 
 #Create paths
 #The direction towards which the path turns the carriable object is determined by the rotation value of the path.
-Path,0,300,90,300,200#xPos,yPos,rotation,witdh,height
-Path,150,700,45,300,200#xPos,yPos,rotation,witdh,height
-Path,300,900,0,300,200#xPos,yPos,rotation,witdh,height
+Path,690,350,0,310,200#xPos,yPos,rotation,witdh,height
+Path,900,530,90,540,20#xPos,yPos,rotation,witdh,height
+Path,900,950,180,400,20#xPos,yPos,rotation,witdh,height
+Path,1350,800,270,400,20#xPos,yPos,rotation,witdh,height
+Path,1250,400,180,400,20#xPos,yPos,rotation,witdh,height
 
 #Create carriable items
-Item,10,20,Circle,200,400,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
-Item,10,20,Circle,200,300,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
+Item,10,20,Circle,650,400,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
+Item,10,20,Circle,1600,950,50,file:graphics/ObjectTestB.png#object,weight,maxCarriers,shape,xPos,yPos,radius,image
 
 #Create Pikmin
 Pikmin,RED,200,500#object,PikminType,xPos,yPos

@@ -6,7 +6,7 @@ import javafx.application.Application;
 public class Main {
     /**
      * Toggles the debug mode.
-     * Debug mode makes invisible object visible as DEEPPINK.
+     * Debug mode makes invisible object visible.
      */
     public static boolean debugMode = false;
     /**
