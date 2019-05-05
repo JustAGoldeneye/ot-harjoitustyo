@@ -5,6 +5,7 @@ import game.domain.pikmin.RedPikmin;
 import game.domain.pikmin.PikminType;
 import game.domain.*;
 import game.ui.pikmin.*;
+import game.dao.*;
 
 import java.util.Scanner;
 import java.io.File;
@@ -41,11 +42,10 @@ public class GameArea extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        
         importMapInfo("maps/testmap1.pkmp");
         
         Pane screen = new Pane();
-        screen.setPrefSize(paneWidth, paneHeight);
+        screen.setPrefSize(paneWidth, paneHeight);        
         
         Text redPikminCounterText = new Text(10, 20, "Red Pikmin: " + playerUI.getPlayer().pikminsInTeam(PikminType.RED));
         redPikminCounterText.setFill(Color.RED);
@@ -76,6 +76,7 @@ public class GameArea extends Application {
         Scene scene = new Scene(screen);
         stage.setScene(scene);
         stage.setTitle("Pikmin 2D");
+        stage.setFullScreen(true);
         scene.setFill(new ImagePattern(backgroundImage));
         stage.show();
         
@@ -102,7 +103,10 @@ public class GameArea extends Application {
            
            if (event.getCode() == KeyCode.W) {
                playerUI.stop();
-           } 
+           }
+           if (event.getCode() == KeyCode.P) {
+                SaveControl.save(0, "testmap1", collectedItemUIs);
+           }
         });
         
         new AnimationTimer() {
@@ -180,6 +184,7 @@ public class GameArea extends Application {
         try (Scanner fReader = new Scanner(new File(fileName))) {
             
             boolean firstRow = true;
+            int currentItemUIid = 0;
             pikminUIs = new ArrayList<>();
             itemUIs = new ArrayList<>();
             collectedItemUIs = new ArrayList<>();
@@ -212,9 +217,10 @@ public class GameArea extends Application {
                 } else if (rowData[0].equals("Path")) {
                     pathUIs.add(new PathUI(Double.valueOf(rowData[1]), Double.valueOf(rowData[2]), Double.valueOf(rowData[3]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5])));
                 } else if (rowData[0].equals("Item")) {
-                   
+                   //Load still if currentItemUIid on saves but mark as saved and set cordinates 5000,5000.
                    if (rowData[3].equals("Circle")) {
-                       itemUIs.add(new ItemUI(Integer.valueOf(rowData[1]), Integer.valueOf(rowData[2]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Double.valueOf(rowData[6]), rowData[7]));
+                       itemUIs.add(new ItemUI(Integer.valueOf(rowData[1]), Integer.valueOf(rowData[2]), Double.valueOf(rowData[4]), Double.valueOf(rowData[5]), Double.valueOf(rowData[6]), rowData[7], currentItemUIid));
+                       currentItemUIid++;
                    } else {
                        System.out.println("Non-fatal error: Shape marker on row " + row + " in the map info file cannot be read. The object wasn't loaded.");
                    }
