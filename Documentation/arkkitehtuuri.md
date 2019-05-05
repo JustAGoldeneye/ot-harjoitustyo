@@ -11,3 +11,7 @@ Sovelluslogiikan keskiössä on GameArea luokka, joka säilöö pelialueen tiedo
 
 Pikminin lisääminen pelaajalta kannettavaan esineeseen:
 ![Sekevenssikavio](https://github.com/JustAGoldeneye/ot-harjoitustyo/blob/master/Documentation/Sekvenssikaavio.png "Sekvenssikaavio")
+
+## Tiedostot
+
+Karttatiedostojen lukemisesta vastaa gameArea ja tallennustiedostojen lukemisesta ja muokkaamisesta SaveControl
