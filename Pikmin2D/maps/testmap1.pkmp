@@ -15,6 +15,7 @@ Wall,1920,0,0,20,1080,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Righ
 Wall,0,-20,0,1920,20,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Up border wall
 Wall,0,1080,0,1920,20,DEEPPINK#object,xPos,yPos,rotation,witdh,height,color#Down border wall
 
+#Create game walls
 Wall,500,0,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 Wall,500,500,0,500,60,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
 Wall,500,0,0,60,440,SADDLEBROWN#object,xPos,yPos,rotation,witdh,height,color
